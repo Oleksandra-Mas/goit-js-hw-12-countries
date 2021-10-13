@@ -33,11 +33,11 @@ function chooseCountriesMarkup(countries) {
         console.log(countries);
         appendCountryMarkup(countries[0]);
     }
-//     else if (countries.length == 0) {
-//          alert({
-//     text: "Nothing found. Please enter another query!"
-//   });
-//     }
+    else if (countries.message) {
+         alert({
+    text: "Nothing found. Please enter another country!"
+  });
+    }
     else
     {
         countries.forEach(element => {
