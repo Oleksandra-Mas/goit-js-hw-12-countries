@@ -1,0 +1,23 @@
+<p class='country__name'>
+<span> {{name}}</span>
+</p>
+<div class="country__text-information">
+    <p class='country__capital'>
+        <span> Capital:</span> {{capital}}
+    </p>
+    <p class='country__population'>
+        <span> Population: </span>{{this.population}}
+    </p>
+    <p class='country__languages'>
+        <span> Languages:</span>
+    </p>
+    <ul>
+        {{#each this.languages}}
+        <li>{{name}}</li>
+        {{/each}}</ul>
+</div>
+{{#each flags}}
+{{#if @first}}
+<img src="{{this}}" alt="flag" >
+{{/if}}
+{{/each}}
