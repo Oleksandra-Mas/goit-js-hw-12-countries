@@ -1,7 +1,53 @@
-.example .background {
-  height: 240px;
-  // Путь к изображениям из SASS-файла всегда такой, как из папки css
-  background-image: url('../images/demo.jpg');
-  background-size: cover;
-  background-position: center;
+// Colors
+$bg-color: rgb(255, 255, 255);
+$dot-color: rgb(231, 227, 214);
+
+// Dimensions
+$dot-size: 1.9px;
+$dot-space: 16px;
+body {
+  background: linear-gradient(90deg, $bg-color ($dot-space - $dot-size), transparent 1%) center,
+    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center, $dot-color;
+  background-size: $dot-space $dot-space;
+  padding: 25px;
+}
+.country__item--bold {
+  font-weight: 700;
+}
+#country-name-input {
+  width: 400px;
+}
+.country__name {
+  font-size: 35px;
+  max-width: 400px;
+  text-align: center;
+}
+.country__image {
+  max-width: 400px;
+  margin-left: 35px;
+  max-width: 240px;
+}
+.country__information {
+  display: flex;
+}
+.country__item--middle-weight {
+  font-weight: 500;
+}
+.country__language + .country__language {
+  margin-top: 10px;
+}
+.country__population,
+.country__languages {
+  margin-top: 28px;
+}
+.pnotify {
+  top: 25px;
+  left: 430px;
+  position: absolute;
+  height: auto;
+  z-index: 9999;
+}
+.pnotify-icon,
+.brighttheme-icon {
+  display: inline;
 }

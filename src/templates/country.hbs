@@ -1,23 +1,23 @@
 <p class='country__name'>
-<span> {{name}}</span>
-</p>
+<span class="country__item--middle-weight"> {{name}}</span>
+</p><div class="country__information">
 <div class="country__text-information">
     <p class='country__capital'>
-        <span> Capital:</span> {{capital}}
+        <span class="country__item--bold"> Capital:</span> {{capital}}
     </p>
     <p class='country__population'>
-        <span> Population: </span>{{this.population}}
+        <span class="country__item--bold"> Population: </span>{{this.population}}
     </p>
     <p class='country__languages'>
-        <span> Languages:</span>
+        <span class="country__item--bold"> Languages:</span>
     </p>
     <ul>
         {{#each this.languages}}
-        <li>{{name}}</li>
+        <li class="country__language">{{name}}</li>
         {{/each}}</ul>
 </div>
 {{#each flags}}
 {{#if @first}}
-<img src="{{this}}" alt="flag" >
+<img class="country__image" src="{{this}}" alt="flag" >
 {{/if}}
-{{/each}}
+{{/each}}</div>

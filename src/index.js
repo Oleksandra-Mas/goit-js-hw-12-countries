@@ -1,6 +1,6 @@
 import './sass/main.scss';
 import fetchCountries from './js/fetchCountries';
-import { alert, defaultModules } from '.././node_modules/@pnotify/core/dist/PNotify.js';
+import { alert, defaultModules, Stack } from '.././node_modules/@pnotify/core/dist/PNotify.js';
 const debounce = require('lodash.debounce');
 
 import countryListTpl from './templates/countryList.hbs'
@@ -25,8 +25,10 @@ function chooseCountriesMarkup(countries) {
         alert({
             text: "Too many matches found. Please enter more specific query!",
             type: 'error',
-            styling: 'brighttheme',
-            icons: 'brighttheme',
+            closer: false,
+            sticker: false,
+            width: '360px',
+            
   });
     }
     else if (countries.length == 1) {
@@ -34,9 +36,13 @@ function chooseCountriesMarkup(countries) {
         appendCountryMarkup(countries[0]);
     }
     else if (countries.message) {
-         alert({
-    text: "Nothing found. Please enter another country!"
-  });
+
+        alert({
+            text: "Nothing found. Please enter another country!",
+            closer: false,
+            sticker: false,
+            }
+  );
     }
     else
     {
