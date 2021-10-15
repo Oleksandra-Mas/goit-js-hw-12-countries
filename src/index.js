@@ -13,9 +13,10 @@ const refs = {
 refs.input.addEventListener('input',  debounce(OnInput, 500),);
 function OnInput(event) {
     const input = event.target.value.trim();
+    clearMarkup();
     if(input)
     {fetchCountries(input)
-        .then(countries => {clearMarkup();
+        .then(countries => {
             chooseCountriesMarkup(countries);
             })
     }
@@ -28,6 +29,7 @@ function chooseCountriesMarkup(countries) {
             closer: false,
             sticker: false,
             width: '360px',
+            delay:3000,
             
   });
     }
@@ -41,13 +43,13 @@ function chooseCountriesMarkup(countries) {
             text: "Nothing found. Please enter another country!",
             closer: false,
             sticker: false,
+            delay:3000,
             }
   );
     }
     else
     {
         countries.forEach(element => {
-            console.log(element.name);
         });
         appendCountryListMarkup(countries);
         
