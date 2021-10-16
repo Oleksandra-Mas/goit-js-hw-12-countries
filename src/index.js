@@ -1,6 +1,6 @@
 import './sass/main.scss';
 import fetchCountries from './js/fetchCountries';
-import { alert, defaultModules, Stack } from '.././node_modules/@pnotify/core/dist/PNotify.js';
+import { alert, } from '.././node_modules/@pnotify/core/dist/PNotify.js';
 const debounce = require('lodash.debounce');
 
 import countryListTpl from './templates/countryList.hbs'
@@ -29,30 +29,25 @@ function chooseCountriesMarkup(countries) {
             closer: false,
             sticker: false,
             width: '360px',
-            delay:3000,
-            
+            delay:1000,
   });
     }
     else if (countries.length == 1) {
-        console.log(countries);
-        appendCountryMarkup(countries[0]);
+        appendCountryMarkup(...countries);
     }
-    else if (countries.message) {
-
+    else if (countries.length >1 && countries.length <=10)
+    {
+        appendCountryListMarkup(countries);
+    }
+    else  {
         alert({
             text: "Nothing found. Please enter another country!",
             closer: false,
             sticker: false,
-            delay:3000,
+            delay:1000,
+            width: '360px',
             }
   );
-    }
-    else
-    {
-        countries.forEach(element => {
-        });
-        appendCountryListMarkup(countries);
-        
     }
 }
 function appendCountryListMarkup(countries) {
